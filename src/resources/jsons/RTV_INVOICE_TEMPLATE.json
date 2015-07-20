@@ -1,0 +1,127 @@
+{
+    "templateInternalKey": "RTV_INVOICE_TEMPLATE",
+    "templateAttributeMap": {
+        "vendorInternalKey": "GM_REEBOK",
+        "vendorBillingAddressStreet": "Obama Street",
+        "vendorBillingAddressStreet2": "White House Avenue",
+        "vendorBillingAddressCity": "Washington",
+        "vendorBillingAddressState": "Washington",
+        "vendorBillingAddressZip": "09875",
+        "vendorShippingAddressStreet": "Obama Street",
+        "vendorShippingAddressStreet2": "White House Avenue",
+        "vendorShippingAddressCity": "Washington",
+        "vendorShippingAddressState": "Washington",
+        "vendorShippingAddressZip": "75955",
+        "invoiceId": "12345",
+        "createdTime": "05-August-2014",
+        "contractInternalKey": "WhiteHouse Contract",
+        "totalQty": "100",
+        "invoiceDollar": "84675",
+        "vendorAg": "Agreement1",
+        "adjustment": "1234",
+        "shipCharge": "234.4",
+        "invoice": "5834",
+        "totalAmt": "23556"
+    },
+    "jasperCollection": [
+        {
+            "upc": "3975459",
+            "sku": "1",
+            "mfg": "34",
+            "desc": "1234",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        },
+        {
+            "upc": "0987",
+            "sku": "8475",
+            "mfg": "12",
+            "desc": "1",
+            "qty": "4856",
+            "cost": "385",
+            "extcost": "34"
+        }
+    ]
+}

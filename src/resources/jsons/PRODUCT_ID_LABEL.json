@@ -1,0 +1,15 @@
+{
+    "templateInternalKey": "PRODUCT_ID_LABEL",    
+    "templateAttributeMap": {
+        "from_vendor": "Any Vendor",
+        "from_address": "Any Address, City, State, Zip",
+        "to_address": "Wal-Mart DC 2839A - ASMS DIS, 47783 SW Regional Airport Blvd, Bentoville, A R 7212",
+        "postal_code": "4202893293",
+        "carrier_pro": "12376768782",
+        "carrier_bl": "12376768782",
+        "dcNumber": "07999",
+        "typeNumber": "0989",
+        "deptNumber": "0012",
+        "orderNumber": "1234567890"
+    }
+}

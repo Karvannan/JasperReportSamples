@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jasperReport
+ xmlns="http://jasperreports.sourceforge.net/jasperreports"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+ http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+ name="DbReport">
+ <queryString>
+<![CDATA[    SELECT
+        `EVE`.`PKEY` AS `EVENT_PKEY`,
+        `EVE`.`NAME` AS `EVENT_NAME`,
+        `MES`.`SUBJECT` AS `SUBJECT`,
+		`MES`.`CREATED_BY` AS `MESSAGE_CREATED_BY`,
+		`MES`.`CREATED_TS` AS `MESSAGE_CREATED_TS`,
+        `MES`.`PKEY` AS `MESSAGE_PKEY`,
+        `NOTI`.`PKEY` AS `NOTIFICATION_PKEY`,
+        `NOTI`.`RECEIVER_ADDRESS` AS `TOADDRESS`,
+        `NOTISTS`.`PKEY` AS `NOTIFICATION_STATUS_PKEY`,
+        `NOTISTS`.`INTERNAL_KEY` AS `NOTIFICATION_INTERNAL_KEY`,
+		`NOTISTS`.`NAME` AS `NOTIFICATION_STATUS_NAME`
+    FROM
+        (((`EVENTS` `EVE`
+        JOIN `NOTIFICATION_ARCHIVES` `NOTI`)
+        JOIN `NOTIFICATION_STATUSES` `NOTISTS`)
+        JOIN `MESSAGES` `MES`)
+    WHERE
+        ((`EVE`.`PKEY` = `MES`.`EVENTS_PKEY`)
+            AND (`MES`.`PKEY` = `NOTI`.`MESSAGES_PKEY`)
+            AND (`NOTI`.`NOTIFICATION_STATUSES_PKEY` = `NOTISTS`.`PKEY`)
+            AND (ISNULL(`EVE`.`DELETED_FLAG`)
+            OR (`EVE`.`DELETED_FLAG` IS FALSE))
+            AND (ISNULL(`NOTISTS`.`DELETED_FLAG`)
+            OR (`NOTISTS`.`DELETED_FLAG` IS FALSE))
+            AND (ISNULL(`NOTI`.`DELETED_FLAG`)
+            OR (`NOTI`.`DELETED_FLAG` IS FALSE))
+            AND (ISNULL(`MES`.`DELETED_FLAG`)
+            OR (`MES`.`DELETED_FLAG` IS FALSE)))]]>
+ </queryString>
+ <field name="EVENT_PKEY" class="java.lang.String" />
+ <field name="EVENT_NAME" class="java.lang.String" />
+ <field name="SUBJECT" class="java.lang.String" />
+ <field name="MESSAGE_CREATED_BY" class="java.lang.String" />
+ <pageHeader>
+ <band height="30">
+ <staticText>
+ <reportElement x="0" y="0" width="69" height="24" />
+ <textElement verticalAlignment="Bottom" />
+ <text>
+ <![CDATA[Tail Number: ]]>
+ </text>
+ </staticText>
+ <staticText>
+ <reportElement x="140" y="0" width="79" height="24" />
+ <text>
+ <![CDATA[Serial Number: ]]>
+ </text>
+ </staticText>
+ <staticText>
+ <reportElement x="280" y="0" width="69" height="24" />
+ <text>
+ <![CDATA[Model: ]]>
+ </text>
+ </staticText>
+ <staticText>
+ <reportElement x="420" y="0" width="69" height="24" />
+ <text>
+ <![CDATA[Engine: ]]>
+ </text>
+ </staticText>
+ </band>
+ </pageHeader>
+ <detail>
+ <band height="30">
+ <textField>
+ <reportElement x="0" y="0" width="69" height="24" />
+ <textFieldExpression class="java.lang.String">
+ <![CDATA[$F{EVENT_PKEY}]]>
+ </textFieldExpression>
+ </textField>
+ <textField>
+ <reportElement x="140" y="0" width="69" height="24" />
+ <textFieldExpression class="java.lang.String">
+ <![CDATA[$F{EVENT_NAME}]]>
+ </textFieldExpression>
+ </textField>
+ <textField>
+ <reportElement x="280" y="0" width="69" height="24" />
+ <textFieldExpression class="java.lang.String">
+ <![CDATA[$F{SUBJECT}]]>
+ </textFieldExpression>
+ </textField>
+ <textField>
+ <reportElement x="420" y="0" width="69" height="24" />
+ <textFieldExpression class="java.lang.String">
+ <![CDATA[$F{MESSAGE_CREATED_BY}]]>
+ </textFieldExpression>
+ </textField>
+ </band>
+ </detail>
+</jasperReport>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="216" pageHeight="72" columnWidth="216" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="30e6bda5-cd3d-4791-9583-d8b2c1d05937">
+	<property name="ireport.zoom" value="2.5937424601000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ilpn" class="java.lang.String"/>
+	<parameter name="description" class="java.lang.String"/>
+	<parameter name="serialNo" class="java.lang.String"/>
+	<detail>
+		<band height="72" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="216" height="72" uuid="d529f6c4-2c92-4c45-a49c-4d9fa7e94c81"/>
+			</rectangle>
+			<componentElement>
+				<reportElement mode="Transparent" x="4" y="5" width="208" height="28" uuid="23a4958e-16fb-43ae-be9f-490499de2a90">
+					<property name="local_mesure_unitmoduleWidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.moduleWidth" value="px"/>
+				</reportElement>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.5" textPosition="bottom" quietZone="1.2" verticalQuietZone="1.5">
+					<jr:codeExpression><![CDATA[$P{ilpn}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<textField isBlankWhenNull="true">
+				<reportElement x="4" y="36" width="208" height="13" uuid="df211335-9857-4d57-9223-614bf883941f">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="29" y="51" width="183" height="18" uuid="ae8759a5-0dcf-406d-aaa6-7d2389b0dfc6">
+					<property name="local_mesure_unitmoduleWidth" value="pixel"/>
+				</reportElement>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.5" textPosition="none" quietZone="1.2" verticalQuietZone="1.5">
+					<jr:codeExpression><![CDATA[$P{serialNo}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<staticText>
+				<reportElement x="4" y="51" width="23" height="15" uuid="f0ccaa0d-053b-4d90-b415-302b97f5604e"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[S/N:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="product_id_label" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75c718e6-28a6-41c8-b4a8-c4742f92cb7e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from_vendor" class="java.lang.String"/>
+	<parameter name="from_address" class="java.lang.String"/>
+	<parameter name="to_address" class="java.lang.String"/>
+	<parameter name="postal_code" class="java.lang.String"/>
+	<parameter name="carrier_pro" class="java.lang.String"/>
+	<parameter name="carrier_bl" class="java.lang.String"/>
+	<parameter name="dcNumber" class="java.lang.String"/>
+	<parameter name="typeNumber" class="java.lang.String"/>
+	<parameter name="deptNumber" class="java.lang.String"/>
+	<parameter name="orderNumber" class="java.lang.String"/>
+	<summary>
+		<band height="318" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="51" y="27" width="457" height="276" uuid="6893c20e-c85d-4840-9d7a-b10f32934f05"/>
+				<box>
+					<pen lineWidth="5.0"/>
+					<topPen lineWidth="5.0"/>
+					<leftPen lineWidth="5.0"/>
+					<bottomPen lineWidth="5.0"/>
+					<rightPen lineWidth="5.0"/>
+				</box>
+				<frame>
+					<reportElement x="13" y="10" width="431" height="255" uuid="b1d56815-325f-40b6-a3b9-d76d12bb8782"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<line>
+						<reportElement x="1" y="91" width="430" height="1" uuid="e30bae0b-b05a-4c54-ae50-57be0c2a4b31"/>
+					</line>
+					<line>
+						<reportElement x="0" y="180" width="431" height="1" uuid="e415e966-6868-428b-b677-0ded2474a534"/>
+					</line>
+					<staticText>
+						<reportElement x="6" y="2" width="66" height="20" uuid="dd2c564f-68fd-493d-a869-0726b11a7a73"/>
+						<textElement>
+							<font size="12"/>
+						</textElement>
+						<text><![CDATA[Ship From:]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="178" y="3" width="50" height="20" uuid="690ed549-6cc4-442b-83b6-2eb4c44a8d8b"/>
+						<textElement>
+							<font size="12"/>
+						</textElement>
+						<text><![CDATA[Ship To:]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="6" y="95" width="105" height="20" uuid="7549c181-4c6f-422d-8926-23f3daf8c9e1"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[POSTAL CODE]]></text>
+					</staticText>
+					<componentElement>
+						<reportElement x="18" y="125" width="196" height="50" uuid="f7ed92ba-4fcd-47ea-a941-d78df427eb94"/>
+						<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.5" textPosition="top" quietZone="1.2" verticalQuietZone="1.5">
+							<jr:codeExpression><![CDATA[$P{postal_code}]]></jr:codeExpression>
+						</jr:Code128>
+					</componentElement>
+					<staticText>
+						<reportElement x="252" y="95" width="68" height="20" uuid="d7d0021a-3e1a-4646-900f-b59089aaf5f8"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[CARRIER]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="252" y="115" width="99" height="20" uuid="285e324f-875a-4965-83cc-114338d03b98"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[Carrier Name]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="252" y="135" width="31" height="20" uuid="c6af9574-eaae-4ca6-9a3d-9e6e75bc317d"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[PRO:]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="304" y="135" width="100" height="20" uuid="10cafbf6-7d92-4a2f-953d-26a6899b9190"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{carrier_pro}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="252" y="155" width="31" height="20" uuid="999a81e0-cdad-45c6-be68-81a8524cc494"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[BL:]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="305" y="155" width="100" height="20" uuid="a70a5daa-a241-41fb-a323-737ef71856cd"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{carrier_bl}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="66" y="180" width="35" height="20" uuid="28833a21-472c-443e-bd32-84c878e6bfcf"/>
+						<textElement textAlignment="Center" verticalAlignment="Bottom">
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[DC#]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="152" y="180" width="40" height="20" uuid="61664fe2-f3c6-456e-9791-b2d293a0f752"/>
+						<textElement textAlignment="Center" verticalAlignment="Bottom">
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[TYPE]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="228" y="180" width="45" height="20" uuid="127b3bbe-608d-4e9a-8e46-05bc5afe3bcd"/>
+						<textElement textAlignment="Center" verticalAlignment="Bottom">
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[DEPT]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="298" y="180" width="75" height="20" uuid="1e41735a-6555-4ed4-8076-07050855d4ed"/>
+						<textElement textAlignment="Center" verticalAlignment="Bottom">
+							<font size="14"/>
+						</textElement>
+						<text><![CDATA[ORDER#]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="57" y="210" width="100" height="31" uuid="e7365c84-2ed1-422c-85ed-d15feb0355ad"/>
+						<textElement>
+							<font size="18"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{dcNumber}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="151" y="210" width="100" height="31" uuid="3efbdb03-236d-4249-aa3b-8160c52e7bf7"/>
+						<textElement>
+							<font size="18"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{typeNumber}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="292" y="210" width="100" height="31" uuid="b75f9674-39c5-4998-8bd9-31612715da80"/>
+						<textElement>
+							<font size="18"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{orderNumber}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="228" y="210" width="100" height="31" uuid="e2fbde89-e186-40a6-9a5c-be74f0cf7507"/>
+						<textElement>
+							<font size="18"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{deptNumber}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="6" y="20" width="135" height="20" uuid="b03193e3-6b73-4b97-9501-be408d481084"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{from_vendor}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="6" y="40" width="135" height="34" uuid="27a115e2-b578-4962-be80-b85cef701ea9"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{from_address}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="178" y="26" width="242" height="54" uuid="70050f9e-e033-44bf-908e-47f285772124"/>
+						<textElement>
+							<font size="14"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$P{to_address}]]></textFieldExpression>
+					</textField>
+					<line>
+						<reportElement x="227" y="92" width="1" height="89" uuid="754ed0a6-f967-4364-bc00-b7143e42fbd3"/>
+					</line>
+					<line>
+						<reportElement x="151" y="0" width="1" height="92" uuid="60de42de-4bf9-4e46-baf4-5b32cd80355e"/>
+					</line>
+				</frame>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

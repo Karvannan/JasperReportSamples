@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3f23c329-084e-4ab0-bc18-04b5e1c262f8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="169"/>
+	<parameter name="clientBillingAddressStreet" class="java.lang.String"/>
+	<parameter name="clientBillingAddressStreet2" class="java.lang.String"/>
+	<parameter name="clientBillingAddressCity" class="java.lang.String"/>
+	<parameter name="clientBillingAddressState" class="java.lang.String"/>
+	<parameter name="clientBillingAddressZip" class="java.lang.String"/>
+	<parameter name="vendorInternalKey" class="java.lang.String"/>
+	<parameter name="vendorBillingAddressStreet" class="java.lang.String"/>
+	<parameter name="vendorBillingAddressStreet2" class="java.lang.String"/>
+	<parameter name="vendorBillingAddressCity" class="java.lang.String"/>
+	<parameter name="vendorBillingAddressState" class="java.lang.String"/>
+	<parameter name="vendorBillingAddressZip" class="java.lang.String"/>
+	<parameter name="vendorShippingAddressStreet" class="java.lang.String"/>
+	<parameter name="vendorShippingAddressStreet2" class="java.lang.String"/>
+	<parameter name="vendorShippingAddressCity" class="java.lang.String"/>
+	<parameter name="vendorShippingAddressState" class="java.lang.String"/>
+	<parameter name="vendorShippingAddressZip" class="java.lang.String"/>
+	<parameter name="invoiceId" class="java.lang.String"/>
+	<parameter name="raNumber" class="java.lang.String"/>
+	<parameter name="createdTime" class="java.lang.String"/>
+	<parameter name="invoiceDueDate" class="java.lang.String"/>
+	<parameter name="invoicePeriodEndDate" class="java.lang.String"/>
+	<parameter name="contractInternalKey" class="java.lang.String"/>
+	<parameter name="finalItemsCount" class="java.lang.String"/>
+	<parameter name="finalInvoiceAmount" class="java.lang.String"/>
+	<parameter name="vendorAg" class="java.lang.String"/>
+	<parameter name="finalInvoiceShipping" class="java.lang.String"/>
+	<parameter name="invoiceSubTotal" class="java.lang.String"/>
+	<parameter name="totalAmt" class="java.lang.String"/>
+	<parameter name="currencySymbol" class="java.lang.String"/>
+	<field name="upc" class="java.lang.String">
+		<fieldDescription><![CDATA[upc]]></fieldDescription>
+	</field>
+	<field name="sku" class="java.lang.String">
+		<fieldDescription><![CDATA[sku]]></fieldDescription>
+	</field>
+	<field name="mfgNo" class="java.lang.String">
+		<fieldDescription><![CDATA[mfgNo]]></fieldDescription>
+	</field>
+	<field name="description" class="java.lang.String">
+		<fieldDescription><![CDATA[description]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.String">
+		<fieldDescription><![CDATA[quantity]]></fieldDescription>
+	</field>
+	<field name="cost" class="java.lang.String">
+		<fieldDescription><![CDATA[cost]]></fieldDescription>
+	</field>
+	<field name="extCost" class="java.lang.String">
+		<fieldDescription><![CDATA[extCost]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="332" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="268" height="54" uuid="9c097897-b057-4812-b43d-4217e14a63f7"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="1" width="200" height="20" uuid="55fc6e7c-bd80-4524-90eb-b8f4f50af653"/>
+					<textElement>
+						<font fontName="SansSerif" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorInternalKey}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="21" width="138" height="20" uuid="9a167783-213b-41e1-b989-a5c01b60b277"/>
+					<textElement>
+						<font fontName="SansSerif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VENDOR INVOICE]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="284" y="0" width="268" height="142" uuid="e7a43aeb-8f87-4a5e-9b33-590cf0d3816f"/>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" uuid="ba42651b-eff7-419b-b2aa-61588c207c11"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[Remit To]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="20" width="268" height="1" uuid="840209c6-2f14-4866-9afd-26e48fbd70b8"/>
+				</line>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="31" width="199" height="20" uuid="31fc4a6e-fe83-4eb9-b1d9-dea3eaff1a14"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{clientBillingAddressStreet}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="51" width="199" height="20" uuid="21f40ff7-08b3-41b2-8f44-8f4e8ef982e7"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{clientBillingAddressStreet2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="73" width="199" height="20" uuid="ead5f244-f219-4c93-b96b-ca1285ed70a6"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{clientBillingAddressCity}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="93" width="199" height="20" uuid="ef3a1c2c-46bc-4040-b8b7-b8640753df07"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{clientBillingAddressState}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="113" width="199" height="20" uuid="1abdd41a-c79d-47ba-8169-be1f17df5158"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{clientBillingAddressZip}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="284" y="143" width="268" height="125" uuid="c90052ce-40fc-4056-b040-d04357134a4d"/>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" uuid="f5d4eb8a-efea-4c08-99c8-4fc02da80322"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[Ship To]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="21" width="268" height="1" uuid="1bc57e1d-425e-4df6-97c3-9e78cb1e9f80"/>
+				</line>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="23" width="199" height="20" uuid="4d8990da-8f97-4391-9e1c-1b9514d56435"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorShippingAddressStreet}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="43" width="199" height="20" uuid="a8cf8312-c1bd-4bb4-94fe-3410cea3db9b"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorShippingAddressStreet2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="65" width="199" height="20" uuid="e44c34f8-2003-498e-84f0-1c5373fd760c"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorShippingAddressCity}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="85" width="199" height="20" uuid="61ea802a-c3c0-4026-8342-d344918cb29f"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorShippingAddressState}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="105" width="199" height="20" uuid="932f4688-2820-4d1d-9ab4-986f0fa914ea"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorShippingAddressZip}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="9" y="142" width="270" height="126" uuid="aa77b4cd-f507-49ac-b18f-6451fe1b21db"/>
+				<staticText>
+					<reportElement x="2" y="0" width="100" height="20" uuid="ba2a9252-f357-43d3-826e-e734daf32907"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[Bill To]]></text>
+				</staticText>
+				<line>
+					<reportElement x="2" y="21" width="268" height="1" uuid="2fc6dd7b-a398-4fe0-b826-b05a9c5b4e71"/>
+				</line>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="23" width="197" height="20" uuid="e8660517-c48f-4886-8002-2f8f7c50f6d4"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorBillingAddressStreet}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="44" width="197" height="20" uuid="7b6e112e-500b-4ee6-a68a-5d85b39bb867"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorBillingAddressStreet2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="66" width="197" height="20" uuid="df831a30-af84-419b-a287-d67ab15fe996"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorBillingAddressCity}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="86" width="197" height="20" uuid="82f6aff1-8002-4960-bb1c-0ac21f59f3ee"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorBillingAddressState}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="106" width="197" height="20" uuid="6439839f-5b7e-452a-9596-9a63a99406a9"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorBillingAddressZip}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="9" y="281" width="543" height="44" uuid="32dd045a-2db8-49c2-8f79-636afabbe544"/>
+				<staticText>
+					<reportElement x="0" y="0" width="89" height="20" uuid="d14202cd-8314-4d66-bf70-8444df71bb13"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Invoice #]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="177" y="0" width="98" height="20" uuid="e54e5add-4d01-446d-8f29-2e9a27c956c7"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vendor #]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="349" y="0" width="84" height="20" uuid="44a46f5a-606a-444d-a7e8-a35ee66580b5"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Return Auth Code]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="94" y="0" width="81" height="20" uuid="a967d8ec-f289-4562-b59b-9aaa73561a9d"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Invoice Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="276" y="0" width="71" height="20" uuid="4dab9222-6e67-495f-ba6c-d0a4382d55d4"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Due Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="436" y="0" width="100" height="20" uuid="f09d8d1b-b19b-4f5c-9efd-38467447e4db"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Terms]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="20" width="89" height="20" uuid="54cb9e7c-93bc-4919-808d-39ae81c8fedb"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{invoiceId}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="94" y="20" width="81" height="20" uuid="abfbafe2-ee9f-4009-b470-3fe068799513"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{createdTime}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="177" y="20" width="98" height="20" uuid="d3564d7f-53c9-4346-a618-302e051b8aa6"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorInternalKey}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="276" y="20" width="71" height="20" uuid="f2629e2d-a050-4bb9-826f-c040439f4bae"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{invoiceDueDate}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="349" y="20" width="84" height="20" uuid="61961941-1e8b-446b-9486-99cc6d3b318c"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{raNumber}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="436" y="20" width="100" height="20" uuid="7857ddd4-0073-4942-8724-bae4935e6e83"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[100% OF COST]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="10" width="90" height="20" uuid="cb71e15b-78c7-48ef-9e70-6d2c84837640"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UPC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="103" y="10" width="66" height="20" uuid="13d146d2-5acf-4118-9a36-603b10a55f71"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SKU/Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="10" width="75" height="20" uuid="729af2c5-282f-42f2-81dc-81592a5efa2c"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mfg Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="10" width="71" height="20" uuid="76a49f6b-0c05-4e2b-88de-50f2e38064ee"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="10" width="65" height="20" uuid="6c38b038-8bbc-429b-8bac-19bf17c872fa"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="10" width="52" height="20" uuid="fe1393ae-ca8b-46d0-b3a0-3f6de4d885fb"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="457" y="10" width="79" height="20" uuid="d9c1e822-9e3e-4ef4-92ba-7d730ddf1635"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ext Cost]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<frame>
+				<reportElement x="6" y="0" width="530" height="24" uuid="09725624-ba2e-4d42-98b0-c9523158985a"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="1" y="0" width="95" height="20" uuid="eab05985-55db-448f-b672-1ab4793d98c4"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{upc}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="96" y="0" width="66" height="20" uuid="cc9823f2-395a-4368-a9a0-a12aad684ab0"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="167" y="0" width="75" height="20" uuid="b5d3a905-41b0-4bde-8d3d-dd57cc906f38"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{mfgNo}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="247" y="0" width="71" height="20" uuid="5c56a557-6767-4e45-97df-d82954e66fe8"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="323" y="0" width="63" height="20" uuid="1e126b05-f284-44d3-8115-da6b2089d593"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="393" y="0" width="52" height="20" uuid="481db43a-2189-45a1-92b4-b4aee803e336"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{currencySymbol}+$F{cost}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="450" y="0" width="79" height="20" uuid="70a10ace-2335-48a8-9d07-3a40912b55fc"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{currencySymbol}+$F{extCost}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band height="254">
+			<frame>
+				<reportElement x="167" y="17" width="383" height="168" uuid="9bc9d23e-d4b5-4fcb-9e07-de898c5cb43b"/>
+				<staticText>
+					<reportElement x="68" y="0" width="100" height="20" uuid="d4b0b786-cfa4-4f6d-bb64-08d238c260f5"/>
+					<textElement>
+						<font fontName="SansSerif" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Invoice Summary]]></text>
+				</staticText>
+				<line>
+					<reportElement x="68" y="20" width="315" height="1" uuid="4c99ba0e-9c7d-45b1-963b-fd7b96fe240c"/>
+				</line>
+				<staticText>
+					<reportElement x="68" y="25" width="100" height="20" uuid="9efec2f3-618e-44bc-96a2-ece98cb9ad25"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[TOTAL QUANTITY]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="68" y="49" width="100" height="20" uuid="40b8211e-941c-4d70-a110-b5e240b6844f"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[INVOICE DOLLAR TOTAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="68" y="69" width="197" height="20" uuid="3da4f3d3-82b1-4b11-9d8f-2d6980d53ae0"/>
+					<text><![CDATA[VENDOR AGREEMENT ADJUSTMENT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="68" y="97" width="100" height="20" uuid="5377b3f2-6798-46e4-986b-1e5ef7b2e527"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[SHIPPING CHARGE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="68" y="147" width="100" height="20" uuid="7e7891cf-0fc8-4ec8-8578-decd331ce34f"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[TOTAL AMOUNT DUE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="68" y="121" width="100" height="20" uuid="b2f2c61e-2bc0-4fd2-89e2-91c0367f2e24"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<text><![CDATA[INVOICE SUBTOTAL]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="283" y="21" width="100" height="20" uuid="7148f066-23a3-41b7-95da-f172a151d535"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{finalItemsCount}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="283" y="45" width="100" height="20" uuid="d9745da1-e257-4454-8baf-e3bf94893117"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{currencySymbol}+$P{finalInvoiceAmount}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="283" y="69" width="100" height="20" uuid="465873c4-430f-4e9c-bace-3dacd657bef6"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{vendorAg}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="283" y="93" width="100" height="20" uuid="4872eb2e-a76d-44e0-99a7-60bae075ee2e"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{currencySymbol}+$P{finalInvoiceShipping}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="283" y="117" width="100" height="20" uuid="f0a1ddea-c518-4a5b-8265-32e06a79ce13"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{currencySymbol}+$P{invoiceSubTotal}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="283" y="142" width="100" height="20" uuid="93ea888b-d3a2-4c51-9cb1-32f6b9ce8a64"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{currencySymbol}+$P{totalAmt}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="7" y="197" width="543" height="57" uuid="287db4bd-009a-4cca-a8e4-7f8d2ba92b2c"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="2" y="0" width="541" height="57" uuid="707a4e2b-372c-4f88-b17f-842328dc0889"/>
+					<textElement>
+						<font fontName="SansSerif"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Above is a listing of items received at our return facility from retail locations between "+$P{invoicePeriodEndDate}+" and "+$P{createdTime}+"."+" Invoice deductions will be made for Vendors who have selected SALVAGE, DESTROY or BLANKET RETURN AUTHORIZATION.If you have selected RETURN TO VENDOR w/ AUTHORIZATION REQUIRED, you have 30 days from the invoice date to provide a RA. If a RA has not been provided within 30 days from the invoice date, the invoice amount will be deducted from our next remittance and the merchandise will be shipped to you without a RA. For question concerning your handling charges, shipping charges or product disposition, please contact your "+ $P{vendorInternalKey} +" Product Manager."]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

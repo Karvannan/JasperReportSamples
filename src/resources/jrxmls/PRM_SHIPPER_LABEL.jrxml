@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="shipper_label" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8e0d7bf5-b4e6-40f3-b0ad-2f6e13613335">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="bpn" class="java.lang.String"/>
+	<parameter name="units" class="java.lang.String"/>
+	<parameter name="model_description" class="java.lang.String"/>
+	<parameter name="erc_upc" class="java.lang.String"/>
+	<summary>
+		<band height="303">
+			<frame>
+				<reportElement mode="Opaque" x="47" y="21" width="466" height="261" uuid="6892f50a-201d-4218-aeb7-21931b0480d2"/>
+				<staticText>
+					<reportElement x="47" y="12" width="150" height="19" uuid="bcf88635-6b85-4a4d-86d7-4c3ad3b1c6b6"/>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[BPN]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="21" y="31" width="165" height="32" uuid="2110ed3c-0c87-434a-9f7f-984f961af186"/>
+					<textElement>
+						<font size="22"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{bpn}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="315" y="12" width="100" height="19" uuid="5c2b18ad-0316-4086-a526-f27af798980f"/>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[UNITS]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="321" y="31" width="100" height="32" uuid="c7e84e55-5364-425b-a369-31903dd030b7"/>
+					<textElement>
+						<font size="22"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{units}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="127" y="83" width="255" height="22" uuid="8ba2769e-1854-410a-8b23-ca9667dc3609"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[MODEL DESCRIPTION]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="127" y="105" width="222" height="29" uuid="ff9afb8d-eee7-4cc0-abda-7fcc29392ccd"/>
+					<textElement>
+						<font size="22"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{model_description}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="152" y="153" width="174" height="21" uuid="3c7da691-580d-4a4a-aaae-164b906bad90"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="14"/>
+					</textElement>
+					<text><![CDATA[ERC UPC]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="127" y="174" width="211" height="28" uuid="8d72b5d5-f2cb-44da-9035-4249ea06fc9c"/>
+					<textElement>
+						<font size="22"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{erc_upc}]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement x="0" y="0" width="429" height="238" uuid="745e8cd7-9364-437e-9194-b3227d1207d1"/>
+					<box>
+						<pen lineWidth="5.0"/>
+						<topPen lineWidth="5.0"/>
+						<leftPen lineWidth="5.0"/>
+						<bottomPen lineWidth="5.0"/>
+						<rightPen lineWidth="5.0"/>
+					</box>
+				</frame>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
